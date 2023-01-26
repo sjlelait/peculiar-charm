@@ -1,15 +1,21 @@
-  // SEED 
+const express = require("express");
+const router = express.Router();
+const Piece = require("../models/pieces");
 
-    // INDEX
+  
+  
+// SEED 
 
-    // NEW
+// INDEX
 
-    // DELETE
+// NEW
 
-    // UPDATE
+// DELETE
 
-    // CREATE
+// UPDATE
 
-    // EDIT
+// CREATE
 
-    // SHOW
+// EDIT
+
+// SHOW
