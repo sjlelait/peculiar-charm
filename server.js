@@ -7,7 +7,7 @@ const pieceRouter = require("./controllers/piece");
 
 // initialize application
 const app = express();
-
+app.use(express.static("public"));
 // configure settings
 require("dotenv").config();
 const PORT = process.env.PORT;

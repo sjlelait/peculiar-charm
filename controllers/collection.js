@@ -9,7 +9,8 @@ const Collection = require("../models/collections");
 router.get("/collections", (req, res) => {
     Collection.find({}, (err, allCollections) => {
         res.render("index.ejs", {
-            collections: allCollections
+            collections: allCollections,
+            title: "Collections"
         });
     });
 });
