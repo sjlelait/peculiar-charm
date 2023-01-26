@@ -6,7 +6,13 @@ const Collection = require("../models/collections");
 // SEED 
 
 // INDEX
-
+router.get("/collections", (req, res) => {
+    Collection.find({}, (err, allCollections) => {
+        res.render("index.ejs", {
+            collections: allCollections
+        });
+    });
+});
 // NEW
 
 // DELETE
@@ -21,3 +27,6 @@ router.post("/collections", (req, res) => {
 // EDIT
 
 // SHOW
+
+
+module.exports = router;

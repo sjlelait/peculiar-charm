@@ -1,6 +1,9 @@
 // require dependencies
 const express = require("express");
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
+const collectionRouter = require("./controllers/collection");
+const pieceRouter = require("./controllers/piece");
 
 // initialize application
 const app = express();
@@ -24,8 +27,11 @@ db.on("connected", () => {
 });
 // mount middleware
 app.use(express.urlencoded({ extended: false }));
-// mount routes
+app.use(methodOverride("_method"));
 
+// mount routes
+app.use(collectionRouter);
+app.use(pieceRouter);
 
 
 // tell app to listen on dedicated port

@@ -19,3 +19,5 @@ const Piece = require("../models/pieces");
 // EDIT
 
 // SHOW
+
+module.exports = router;
