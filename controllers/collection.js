@@ -1,20 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const Collection = require()
+const Collection = require("../models/collections");
     
     
-    // SEED 
+// SEED 
 
-    // INDEX
+// INDEX
 
-    // NEW
+// NEW
 
-    // DELETE
+// DELETE
 
-    // UPDATE
+// UPDATE
 
-    // CREATE
+// CREATE
+router.post("/collections", (req, res) => {
+    res.send(req.body);
+});
 
-    // EDIT
+// EDIT
 
-    // SHOW
+// SHOW
