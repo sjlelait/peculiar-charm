@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs") %>
+
+<body>
+    <h1>Create a New and Unusual Collection</h1>
+    <form action="/collections" method="POST">
+        Name: <input type="text" name="name">
+        Description: <input type="text" name="description">
+        Image URL: <input type="text" name="img">
+        <input class="button" type="submit" value="Add New"> 
+    </form>
+</body>
+</html>

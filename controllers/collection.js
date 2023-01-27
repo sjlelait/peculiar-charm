@@ -15,6 +15,11 @@ router.get("/collections", (req, res) => {
     });
 });
 // NEW
+router.get("/collections/new", (req, res) => {
+    res.render("new.ejs", {
+        title: "New Collection"
+    });
+});
 
 // DELETE
 
@@ -22,7 +27,14 @@ router.get("/collections", (req, res) => {
 
 // CREATE
 router.post("/collections", (req, res) => {
-    res.send(req.body);
+    if (req.body.completed === "on") {
+        req.body.completed = "true"
+    } else {
+        req.body.completed = "false"
+    }
+    Collection.create(req.body, (error, createdCollection) => {
+        res.send(createdCollection);
+    });
 });
 
 // EDIT
