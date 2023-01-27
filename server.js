@@ -7,8 +7,6 @@ const pieceRouter = require("./controllers/piece");
 
 // initialize application
 const app = express();
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static("public"));
 
 // configure settings
 require("dotenv").config();
@@ -30,11 +28,19 @@ db.on("connected", () => {
 // mount middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
+app.use(express.static("public"));
 
 // mount routes
+    // is this where it should live?
+app.get("/collections/about", (req, res) => {
+    res.render("about.ejs", {
+        title: "About Me"
+    });
+});
+
 app.use(collectionRouter);
 app.use(pieceRouter);
-
+    
 
 // tell app to listen on dedicated port
 app.listen(PORT, () => {
