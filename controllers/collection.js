@@ -16,7 +16,7 @@ router.get("/collections", (req, res) => {
 });
 // NEW
 router.get("/collections/new", (req, res) => {
-    res.render("new.ejs", {
+    res.render("new-collection.ejs", {
         title: "New Collection"
     });
 });
@@ -32,14 +32,20 @@ router.post("/collections", (req, res) => {
     } else {
         req.body.completed = "false"
     }
-    Collection.create(req.body, (error, createdCollection) => {
-        res.send(createdCollection);
+    Collection.create(req.body, (err, createdCollection) => {
+        res.redirect("/collections");
     });
 });
 
 // EDIT
 
 // SHOW
-
-
+router.get("/collections/:id", (req, res) => {
+    Collection.findById(req.params.id, (err, foundCollection) => {
+        res.render("show-collection.ejs", {
+            collection: foundCollection,
+            title: "Collection"
+        });
+    });
+});
 module.exports = router;
