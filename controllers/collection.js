@@ -22,7 +22,11 @@ router.get("/collections/new", (req, res) => {
 });
 
 // DELETE
-
+router.delete("/collections/:id", (req, res) => {
+    Collection.findByIdAndDelete(req.params.id, (err, data) => {
+        res.redirect("/collections");
+    });
+});
 // UPDATE
 router.put("/collections/:id", (req, res) => {
     if(req.body.completed === "on") {
