@@ -7,12 +7,15 @@
     <%- include("../partials/nav.ejs") %>
     <div class="container-fluid">    
     <h1>Welcome to Peculiar Charm</h1>
-    <div class="row">
-    <% collections.forEach(collection => { %>
-        <h2><%= collection.name %></h2>
-        <a href="/collections/<%= collection._id %>"><img class="collectionImg" src="<%= collection.img %>"></a> 
-        <p><%= collection.description %></p>
-    <% }) %>
+        <div class="row row-cols-3">
+            <% collections.forEach(collection => { %>
+            <div class="col">
+                <h2><%= collection.name %></h2>
+                <a href="/collections/<%= collection._id %>"><img class="collectionImg" src="<%= collection.img %>"></a> 
+                <p><%= collection.description %></p>
+                <a href="/collections/<%= collection._id %>/edit"><button>Edit this Collection</button></a>
+            </div>
+        <% }) %>
     <a href="/collections/new"><button>Add a New Collection</button></a>
 </div>
 </div>

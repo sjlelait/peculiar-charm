@@ -24,6 +24,19 @@ router.get("/collections/new", (req, res) => {
 // DELETE
 
 // UPDATE
+router.put("/collections/:id", (req, res) => {
+    if(req.body.completed === "on") {
+        req.body.completed = "true"
+    } else {
+        req.body.completed = false
+    }
+    Collection.findByIdAndUpdate((req.params.id), req.body, {
+        new: true,
+    },
+    (err, updatedCollection) => {
+        res.redirect(`/collections/${req.params.id}`)
+    });
+});
 
 // CREATE
 router.post("/collections", (req, res) => {
@@ -38,7 +51,14 @@ router.post("/collections", (req, res) => {
 });
 
 // EDIT
-
+router.get("/collections/:id/edit", (req, res) => {
+    Collection.findById(req.params.id, (err, foundCollection) => {
+        res.render("edit-collection.ejs", {
+            collection: foundCollection,
+            title: "Edit Collection"
+        });    
+    });
+});
 // SHOW
 router.get("/collections/:id", (req, res) => {
     Collection.findById(req.params.id, (err, foundCollection) => {
