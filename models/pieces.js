@@ -2,9 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const pieceSchema = new Schema({
-    collectionId: String,
-    name: String,
+    name: { type: String, required: true },
     description: String,
-    img: String
+    img: { type: String, required: true }
 });
 module.exports = mongoose.model("Piece", pieceSchema);

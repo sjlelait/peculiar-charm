@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
+const logger = require("morgan");
 const collectionRouter = require("./controllers/collection");
 const pieceRouter = require("./controllers/piece");
 
