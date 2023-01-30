@@ -7,4 +7,5 @@ const collectionSchema = new Schema({
     img: { type: String, required: true },
     pieces: [{ type: Schema.Types.ObjectId, ref: "Piece"}],
 });
+
 module.exports = mongoose.model("Collection", collectionSchema);

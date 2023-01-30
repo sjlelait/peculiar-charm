@@ -1,5 +1,4 @@
 const express = require("express");
-const { collection } = require("../models/collections");
 const router = express.Router();
 const Collection = require("../models/collections");
 const Piece = require("../models/pieces");
@@ -66,23 +65,21 @@ router.get("/collections/:id/edit", (req, res) => {
     });
 });
 // SHOW
-/*
-router.get("/collections/:id", (req, res) => {    
-    Collection.findOne({ _id: req.params.id })
-    .populate("pieces").exec((err, piece) => {
+router.get("/collections/:id", (req, res) => {
+    Collection.findById(req.params.id, (err, foundCollection) => {
         res.render("show-collection.ejs", {
-            piece: piece,
-            collection: collection,
+            collection: foundCollection,
             title: "Collection"
         });
-    }); 
+    });
 });
 
-*/
+/*
 router.get("/collections/:id", (req, res) => {
-    Collection.findOne( {_id: req.params.id} ).populate("pieces")
+    Collection.findById( {_id: req.params.id} )
+    .populate("pieces")
     .then(result => res.json(result))
     .catch(error => res.json(error))
 });
-
+*/
 module.exports = router;

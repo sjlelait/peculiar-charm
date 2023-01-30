@@ -9,13 +9,26 @@ const Collection = require("../models/collections");
 // INDEX
 
 // NEW
-
+router.get("/pieces/new", (req, res) => {
+    res.render("new-piece.ejs", {
+        title: "New Piece"
+    });
+});
 // DELETE
 
 // UPDATE
 
 // CREATE
-
+router.post("/pieces", (req, res) => {
+    if(req.body.completed === "on") {
+        req.body.completed = "true"
+    } else {
+        req.body.completed = false
+    }
+    Piece.create(req.body, (err, createdPiece) => {
+        res.send(createdPiece)
+    });
+});
 // EDIT
 
 // SHOW

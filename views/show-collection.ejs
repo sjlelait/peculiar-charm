@@ -5,12 +5,10 @@
 
 <body>
     <%- include("../partials/nav.ejs") %>
-    
-    <ul>
-        <li><%= piece.name %></li>
-        <img src="<%= piece.img %>">
-        <li><%= piece.description %></li>
-    </ul>  
-
+        <h1><%= collection.name %></h1>
+        <h2>collection.piece.name</h2>
+        <p>piece.img as a link</p>
+        <p>piece.description</p>
+        <a href="/pieces/new"><button>Add a New Collection</button></a>
 </body>
 </html>
