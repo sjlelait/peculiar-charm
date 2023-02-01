@@ -1,5 +1,4 @@
 const express = require("express");
-const { collection } = require("../models/collections");
 const router = express.Router();
 const Collection = require("../models/collections");
 const Piece = require("../models/pieces");
@@ -40,7 +39,7 @@ router.put("/collections/:id", (req, res) => {
         new: true,
     },
     (err, updatedCollection) => {
-        res.redirect(`/collections/${req.params.id}`)
+        res.redirect("/collections")
     });
 });
 

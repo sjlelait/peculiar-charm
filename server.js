@@ -30,7 +30,7 @@ db.on("connected", () => {
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
-
+app.use(logger("dev"));
 // mount routes
     // is this where it should live?
 app.get("/collections/about", (req, res) => {

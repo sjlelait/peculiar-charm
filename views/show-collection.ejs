@@ -5,13 +5,13 @@
 
 <body>
     <%- include("../partials/nav.ejs") %>
-        <h1><%= collection.name %></h1>
+    <h1><%= collection.name %></h1>
         <% collection.pieces.forEach((piece) => { %>
-
             <h2><%= piece.name %></h2>
             <img src="<%= piece.img %>">
             <p><%= piece.description %></p>
+            <a href="/collections/<%= collection._id %>/<%= piece._id %>/edit"><button>Edit This Piece</button></a>
             <% }); %>
-            <a href="/collections/<%= collection._id %>/pieces/new"><button>Add a New Piece</button></a>
+            <a href="/collections/<%= collection._id %>/new"><button>Add a New Piece</button></a>
 </body>
 </html>
