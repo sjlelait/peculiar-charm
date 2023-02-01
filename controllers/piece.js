@@ -9,7 +9,7 @@ const Collection = require("../models/collections");
 // INDEX
 
 // NEW
-router.get("/pieces/new", (req, res) => {
+router.get("/collections/:id/pieces/new", (req, res) => {
     res.render("new-piece.ejs", {
         title: "New Piece"
     });
@@ -19,16 +19,17 @@ router.get("/pieces/new", (req, res) => {
 // UPDATE
 
 // CREATE
-router.post("/pieces", (req, res) => {
+router.post("/collections/:id/pieces", (req, res) => {
     if(req.body.completed === "on") {
         req.body.completed = "true"
     } else {
         req.body.completed = false
     }
     Piece.create(req.body, (err, createdPiece) => {
-        res.send(createdPiece)
+        res.redirect("/collections/:id/pieces")
     });
 });
+
 // EDIT
 
 // SHOW

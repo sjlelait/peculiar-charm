@@ -1,4 +1,5 @@
 const express = require("express");
+const { collection } = require("../models/collections");
 const router = express.Router();
 const Collection = require("../models/collections");
 const Piece = require("../models/pieces");
@@ -65,14 +66,18 @@ router.get("/collections/:id/edit", (req, res) => {
     });
 });
 // SHOW
-router.get("/collections/:id", (req, res) => {
-    Collection.findById(req.params.id, (err, foundCollection) => {
+
+
+router.get("/collections/:id", (req, res) => {    
+    Collection.findById({ _id: req.params.id })
+    .populate("pieces").exec((err, collection) => {
         res.render("show-collection.ejs", {
-            collection: foundCollection,
+            collection: collection,
             title: "Collection"
         });
-    });
+    }); 
 });
+
 
 /*
 router.get("/collections/:id", (req, res) => {
