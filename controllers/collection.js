@@ -30,11 +30,6 @@ router.delete("/collections/:id", (req, res) => {
 });
 // UPDATE
 router.put("/collections/:id", (req, res) => {
-    if(req.body.completed === "on") {
-        req.body.completed = "true"
-    } else {
-        req.body.completed = false
-    }
     Collection.findByIdAndUpdate((req.params.id), req.body, {
         new: true,
     },
@@ -45,11 +40,6 @@ router.put("/collections/:id", (req, res) => {
 
 // CREATE
 router.post("/collections", (req, res) => {
-    if (req.body.completed === "on") {
-        req.body.completed = "true"
-    } else {
-        req.body.completed = "false"
-    }
     Collection.create(req.body, (err, createdCollection) => {
         res.redirect("/collections");
     });

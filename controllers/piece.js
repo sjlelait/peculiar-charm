@@ -25,11 +25,6 @@ router.delete("/collections/:collectionId/:id", (req, res) => {
 
 // UPDATE
 router.put("/collections/:collectionId/:id", (req, res) => {
-    if(req.body.completed === "on") {
-        req.body.completed = "true"
-    } else {
-        req.body.completed = false
-    }
     Piece.findByIdAndUpdate((req.params.id), req.body, {
         new: true,
     },
@@ -42,13 +37,9 @@ router.put("/collections/:collectionId/:id", (req, res) => {
 // CREATE
 router.post("/collections/:collectionId/pieces", (req, res) => {
     Piece.create(req.body, (err, createdPiece) => {
-        
         Collection.findByIdAndUpdate(req.params.collectionId, { $push: { pieces: createdPiece } }, (err, updatedCollection) => {
-            console.log(err);
-            console.log(updatedCollection);
             res.redirect(`/collections/${req.params.collectionId}`)
         });
-
     });
 });
 
