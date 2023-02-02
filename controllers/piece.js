@@ -53,13 +53,12 @@ router.get("/collections/:collectionId/:id/edit", (req, res) => {
     });
 });
 // SHOW
-router.get("/collections/:collectionId/:id", (req, res) => {    
-    Piece.findById({ _id: req.params.id })
-    .populate("collection").exec((err, piece) => {
-        res.render("show-collection.ejs", {
-            Piece: piece,
-            title: "Collection"
+router.get("/collections/:collectionId/:id/show", (req, res) => {
+    Piece.findById(req.params.id, (err, foundPiece) => {
+        res.render("show-piece.ejs", {
+            piece: foundPiece,
+            title: "Show Piece"
         });
-    }); 
+    });
 });
 module.exports = router;

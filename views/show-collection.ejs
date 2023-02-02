@@ -8,8 +8,7 @@
     <h1><%= collection.name %></h1>
         <% collection.pieces.forEach((piece) => { %>
             <h2><%= piece.name %></h2>
-            <img src="<%= piece.img %>">
-            <p><%= piece.description %></p>
+            <a href="/collections/<%= collection._id %>/<%= piece._id %>/show"><img class="pieceImg" src="<%= piece.img %>"></a><br />
             <a href="/collections/<%= collection._id %>/<%= piece._id %>/edit"><button>Edit This Piece</button></a>
             <form action="/collections/<%= collection._id %>/<%= piece._id %>?_method=DELETE" method="POST">
                 <input class="button" type="submit" value="DELETE Piece">

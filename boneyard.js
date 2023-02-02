@@ -1,17 +1,11 @@
 
-
-///
-router.put("/collections/:collectionId/:id", (req, res) => {
-    if(req.body.completed === "on") {
-        req.body.completed = "true"
-    } else {
-        req.body.completed = false
-    }
-    Piece.findByIdAndUpdate({ _id: req.params.id})
-    .populate("collections").exec((err, piece) => {
+// show page not using
+router.get("/collections/:collectionId/:id", (req, res) => {    
+    Piece.findById({ _id: req.params.id })
+    .populate("collection").exec((err, piece) => {
         res.render("show-collection.ejs", {
-            piece: piece,
-            title: "Collection" 
+            Piece: piece,
+            title: "Collection"
         });
-    });
+    }); 
 });

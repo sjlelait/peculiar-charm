@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs") %>
+
+<body>
+    <%- include("../partials/nav.ejs") %>
+    <h1><%= piece.name %></h1>
+    <img class="showImg" src="<%= piece.img %>">
+    <p><%= piece.description %></p>
+</html>
