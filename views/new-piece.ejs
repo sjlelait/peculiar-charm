@@ -5,12 +5,15 @@
 
 <body>
     <%- include("../partials/nav.ejs") %>
-    <h1>Add a New Piece</h1>
-    <form action="/collections/<%= collection._id %>?_method=PUT" method="POST">
-        Name: <input type="text" name="name">
-        Description: <input type="text" name="description">
-        Image URL: <input type="text" name="img">
+    <div class="container">
+        <h1>Add a New Piece</h1>
+        <form action="/collections/<%= collectionId %>/pieces" method="POST">
+            Name: <input type="text" name="name">
+            Description: <input type="text" name="description">
+            Image URL: <input type="text" name="img">
+            <input type="hidden" name="collectionId" value="<%= collectionId %>">
         <input class="button" type="submit" value="Add New"> 
-    </form>
+        </form>
+        </div>
 </body>
 </html>

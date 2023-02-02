@@ -11,6 +11,9 @@
             <img src="<%= piece.img %>">
             <p><%= piece.description %></p>
             <a href="/collections/<%= collection._id %>/<%= piece._id %>/edit"><button>Edit This Piece</button></a>
+            <form action="/collections/<%= collection._id %>/<%= piece._id %>?_method=DELETE" method="POST">
+                <input class="button" type="submit" value="DELETE Piece">
+            </form>
             <% }); %>
             <a href="/collections/<%= collection._id %>/new"><button>Add a New Piece</button></a>
 </body>
