@@ -5,8 +5,19 @@
 
 <body>
     <%- include("../partials/nav.ejs") %>
-    <h1><%= piece.name %></h1>
-    <img class="showImg" src="<%= piece.img %>">
-    <p><%= piece.description %></p>
-    <a href="/collections/<%= piece.collectionId %>/<%= piece._id %>/edit"><button>Edit This Piece</button></a>
+    <div class="container-fluid">
+        <h1><%= piece.name %></h1>
+        <div class="row">
+            <div class="col">
+                <img class="showImg" src="<%= piece.img %>">
+                <p><%= piece.description %></p>
+                <a class="link" href="<%= piece.link %>"><button>Buy Here!</button></a><br />
+                <a href="/collections/<%= piece.collectionId %>/<%= piece._id %>/edit"><button>Edit This Piece</button></a>
+                <form action="/collections/<%= piece.collectionId %>/<%= piece._id %>?_method=DELETE" method="POST">
+                    <input class="button" type="submit" value="DELETE Piece">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

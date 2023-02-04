@@ -8,9 +8,9 @@
     <div class="container">
         <h1>Add a New Piece</h1>
         <form action="/collections/<%= collectionId %>/pieces" method="POST">
-            Name: <input type="text" name="name">
-            Description: <input type="text" name="description">
-            Image URL: <input type="text" name="img">
+            Name: <input type="text" name="name"><br />
+            Description: <input type="text" name="description"><br />
+            Image URL: <input type="text" name="img"><br />
             <input type="hidden" name="collectionId" value="<%= collectionId %>">
         <input class="button" type="submit" value="Add New"> 
         </form>
