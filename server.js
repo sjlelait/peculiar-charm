@@ -60,11 +60,7 @@ app.use(isAuthenticated, collectionRouter);
 app.use(isAuthenticated, pieceRouter);
 // mount routes
     // is this where it should live?
-app.get("/collections/about", (req, res) => {
-    res.render("about.ejs", {
-        title: "About Me"
-    });
-});
+
 
 
 

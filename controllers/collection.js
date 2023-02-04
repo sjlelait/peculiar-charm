@@ -54,9 +54,14 @@ router.get("/collections/:id/edit", (req, res) => {
         });    
     });
 });
+// about
+router.get("/collections/about", (req, res) => {
+    res.render("about.ejs", {
+        title: "About Me"
+    });
+});
+
 // SHOW
-
-
 router.get("/collections/:id", (req, res) => {    
     Collection.findById({ _id: req.params.id })
     .populate("pieces").exec((err, collection) => {
