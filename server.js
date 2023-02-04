@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
+const session = require("express-session");
 const logger = require("morgan");
 const collectionRouter = require("./controllers/collection");
 const pieceRouter = require("./controllers/piece");
@@ -30,6 +31,11 @@ db.on("connected", () => {
 // mount middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+}));
 app.use(express.static("public"));
 app.use(logger("dev"));
 // mount routes

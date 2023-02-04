@@ -15,6 +15,7 @@ router.post("/signup", (req, res) => {
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     req.body.password = hashedPassword;
     User.create(req.body, (err, newUser) => {
+        req.session.userId = newUser._id;
         res.redirect("/collections");
     });
 });
@@ -35,12 +36,17 @@ router.post("/login", (req, res) => {
         if(!isMatched) {
             return res.redirect("/login");
         }
+        req.session.userId = foundUser._id;
         res.redirect("/collections");
     });
 });
 
 // logout users
-
+router.get("/logout", (req, res) => {
+    req.session.destroy((err) => {
+        res.redirect("/login");
+    });
+});
 
 
 
