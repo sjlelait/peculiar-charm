@@ -38,6 +38,12 @@ app.get("/collections/about", (req, res) => {
         title: "About Me"
     });
 });
+// home route
+app.get("/", (req, res) => {
+    res.render("home.ejs", {
+        title: "Home"
+    });
+});
 
 app.use(collectionRouter);
 app.use(pieceRouter);

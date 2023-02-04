@@ -67,7 +67,6 @@ router.get("/collections/:id", (req, res) => {
     }); 
 });
 
-
 /*
 router.get("/collections/:id", (req, res) => {
     Collection.findById( {_id: req.params.id} )
