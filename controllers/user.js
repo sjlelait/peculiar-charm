@@ -12,15 +12,32 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", (req, res) => {
-    req.body.password = hashedPassword;
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+    req.body.password = hashedPassword;
     User.create(req.body, (err, newUser) => {
         res.redirect("/collections");
     });
 });
 
 // login users
+router.get("/login", (req, res) => {
+    res.render("login.ejs", {
+        title: "Login"
+    });
+});
 
+router.post("/login", (req, res) => {
+    User.findOne({ email: req.body.email }, (err, foundUser) => {
+        if(!foundUser) {
+            return res.redirect("/login");
+        } 
+        const isMatched = bcrypt.compareSync(req.body.password, foundUser.password)
+        if(!isMatched) {
+            return res.redirect("/login");
+        }
+        res.redirect("/collections");
+    });
+});
 
 // logout users
 

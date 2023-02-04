@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs") %>
+
+<body>
+    <%- include("../partials/nav.ejs") %>
+    <h1>Please Login</h1>
+    <form action="/login" method="POST" autocomplete="off">
+        <label>
+            Email: 
+            <input type="email" name="email" required>
+        </label>
+        <label>
+            Password: 
+            <input type="password" name="password" required>
+        </label>
+        <input class="button" type="submit" value="Login">
+    </form>
+    <%- include("../partials/footer") %>
+</html>
