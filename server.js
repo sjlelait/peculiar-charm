@@ -31,20 +31,21 @@ db.on("connected", () => {
 // mount middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
+app.use(express.static("public"));
+app.use(logger("dev"));
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
 }));
-app.use(express.static("public"));
-app.use(logger("dev"));
-// mount routes
-    // is this where it should live?
-app.get("/collections/about", (req, res) => {
-    res.render("about.ejs", {
-        title: "About Me"
-    });
-});
+// authentication middleware
+function isAuthenticated(req, res, next) {
+    if(!req.session.userId) {
+        return res.redirect("/login");
+    }
+    next();
+}
+
 // home route
 app.get("/", (req, res) => {
     res.render("home.ejs", {
@@ -52,9 +53,19 @@ app.get("/", (req, res) => {
     });
 });
 
-app.use(collectionRouter);
-app.use(pieceRouter);
 app.use(userRouter);
+app.use(isAuthenticated, collectionRouter);
+app.use(isAuthenticated, pieceRouter);
+// mount routes
+    // is this where it should live?
+app.get("/collections/about", (req, res) => {
+    res.render("about.ejs", {
+        title: "About Me"
+    });
+});
+
+
+
     
 
 // tell app to listen on dedicated port
