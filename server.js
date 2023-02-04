@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 const logger = require("morgan");
 const collectionRouter = require("./controllers/collection");
 const pieceRouter = require("./controllers/piece");
+const userRouter = require("./controllers/user");
 
 // initialize application
 const app = express();
@@ -47,6 +48,7 @@ app.get("/", (req, res) => {
 
 app.use(collectionRouter);
 app.use(pieceRouter);
+app.use(userRouter);
     
 
 // tell app to listen on dedicated port
