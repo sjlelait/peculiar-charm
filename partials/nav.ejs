@@ -1,8 +1,11 @@
 <nav class="nav">
     <h3>Peculiar Charm</h3>
-    <a class="nav-link" href="/collections">Collections</a>
-    <a class="nav-link" href="/collections/about">About Me</a>
-    <a class="nav-link" href="/login">Login</a>
-    <a class="nav-link" href="/logout">Logout</a>
-    <a class="nav-link" href="/signup">Sign Up</a>
+    <% if(locals.user) { %>
+        <a class="nav-link" href="/collections">Collections</a>
+        <a class="nav-link" href="/collections/about">About Me</a>
+        <a class="nav-link" href="/logout">Logout</a>
+     <% } else { %>
+        <a class="nav-link" href="/login">Login</a>
+        <a class="nav-link" href="/signup">Sign Up</a>
+    <% } %>
 </nav>
