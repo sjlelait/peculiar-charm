@@ -9,3 +9,7 @@ router.get("/collections/:collectionId/:id", (req, res) => {
         });
     }); 
 });
+
+
+/// edit piece for collection page
+<a href="/collections/<%= collection._id %>/<%= piece._id %>/edit"><button>Edit This Piece</button></a>
