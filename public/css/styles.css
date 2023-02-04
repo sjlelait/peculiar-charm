@@ -54,9 +54,23 @@ h2 {
     object-fit: cover;
 }
 
+.aboutImg {
+    height: 25rem;
+    width: 40rem;
+    padding: .2rem;
+    border: .4rem solid;
+    border-radius: 1.5rem;
+    border-color: black;
+    object-fit: cover;
+}
+
 .col {
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: .5rem;
+}
+
+footer {
+    text-align: center;
 }

@@ -11,12 +11,12 @@
                 <% collection.pieces.forEach((piece) => { %>
                 <div class="col">
                     <h2><%= piece.name %></h2>
-                    <a href="/collections/<%= collection._id %>/<%= piece._id %>/show"><img class="pieceImg" src="<%= piece.img %>"></a><br />           
-                    
+                    <a href="/collections/<%= collection._id %>/<%= piece._id %>/show"><img class="pieceImg" src="<%= piece.img %>"></a><br />
                 </div>
                 <% }); %>
             </div>
             <a href="/collections/<%= collection._id %>/new"><button>Add a New Piece</button></a>
     </div>
+    <%- include("../partials/footer") %>
 </body>
 </html>
