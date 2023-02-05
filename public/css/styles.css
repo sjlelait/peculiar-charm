@@ -5,6 +5,7 @@ body {
 
 nav {
     justify-content: center;
+    align-items: center;
     height: 6rem;
     background-image: url("https://images.pexels.com/photos/4065850/pexels-photo-4065850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
@@ -12,7 +13,6 @@ nav {
     background-color: rgb(28, 29, 25);
     color:rgb(188, 202, 33);
     margin: 1rem;
-    padding-top: 1.75rem;
     text-shadow: 1px 1px 2px black;
 
 }
@@ -75,4 +75,11 @@ h2 {
 footer {
     text-align: center;
     padding: 5rem;
+}
+
+@media only screen and (max-width: 520px) {
+    .nav-link, .nav-link:hover {
+        font-size: smaller;
+        padding: .15rem;
+    }
 }
