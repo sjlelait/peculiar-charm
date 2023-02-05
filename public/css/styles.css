@@ -25,24 +25,27 @@ nav {
     color: rgb(234, 251, 50)
 }
 
-h1 {
+h1, h2, .header {
+    font-family: 'Aboreto';
+    font-weight: bolder;
+}
+
+.header {
+    color: rgb(234, 251, 50); 
+}
+
+h1, h2, p, .col, footer {
     text-align: center;
 }
 
 h2 {
-    color:rgb(188, 202, 33);
-    text-align: center;
+    color:rgb(209, 223, 52);
     text-shadow: 1px 1px 2px rgb(0, 0, 0);
-}
-
-p {
-    text-align: center;
 }
 
 .col {
     justify-content: center;
     align-items: center;
-    text-align: center;
     padding: .5rem;
 }
 
@@ -93,7 +96,6 @@ p {
 }
 
 footer {
-    text-align: center;
     padding: 3rem 0 0 0;
 }
 
