@@ -55,16 +55,11 @@ app.get("/", (req, res) => {
     });
 });
 
-app.use(userRouter);
+// mount routes
+app.use(userRouter); 
 app.use(isAuthenticated, collectionRouter);
 app.use(isAuthenticated, pieceRouter);
-// mount routes
 
-
-
-
-
-    
 
 // tell app to listen on dedicated port
 app.listen(PORT, () => {

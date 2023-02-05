@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Piece = require("../models/pieces");
 const Collection = require("../models/collections");
-  
+const cloudinary = require("cloudinary").v2;
   
 // SEED 
 
@@ -19,7 +19,7 @@ router.get("/collections/:collectionId/new", (req, res) => {
 // DELETE
 router.delete("/collections/:collectionId/:id", (req, res) => {
     Piece.findByIdAndDelete(req.params.id, (err, data) => {
-        res.redirect("/collections/:collectionId")
+        res.redirect(`/collections/${req.params.collectionId}`)
     });
 });
 

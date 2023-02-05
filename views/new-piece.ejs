@@ -7,10 +7,11 @@
     <%- include("../partials/nav.ejs") %>
     <div class="container">
         <h1>Add a New Piece</h1>
-        <form action="/collections/<%= collectionId %>/pieces" method="POST">
+        <form action="/collections/<%= collectionId %>/pieces" method="POST" autocomplete="off">
             Name: <input type="text" name="name"><br />
             Description: <input type="text" name="description"><br />
             Image URL: <input type="text" name="img"><br />
+            Link to buy/ more info: <input type="text" name="link"><br />
             <input type="hidden" name="collectionId" value="<%= collectionId %>">
             <input class="button" type="submit" value="Add New"> 
         </form>
