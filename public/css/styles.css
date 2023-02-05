@@ -25,16 +25,6 @@ nav {
     color: rgb(234, 251, 50)
 }
 
-.collectionImg, .pieceImg {
-    height: 20rem;
-    width: 15rem;
-    padding: .2rem;
-    border-radius: 1.5rem;
-    border: .4rem solid;
-    border-color: black;
-    object-fit: cover;
-}
-
 h1 {
     text-align: center;
 }
@@ -45,24 +35,8 @@ h2 {
     text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 
-.showImg {
-    height: 25rem;
-    width: 21rem;
-    padding: .2rem;
-    border: .4rem solid;
-    border-radius: 1.5rem;
-    border-color: black;
-    object-fit: cover;
-}
-
-.aboutImg {
-    height: 25rem;
-    width: 40rem;
-    padding: .2rem;
-    border: .4rem solid;
-    border-radius: 1.5rem;
-    border-color: black;
-    object-fit: cover;
+p {
+    text-align: center;
 }
 
 .col {
@@ -71,6 +45,41 @@ h2 {
     text-align: center;
     padding: .5rem;
 }
+
+.collectionImg, .pieceImg {
+    height: 20rem;
+    width: 15rem;
+    padding: .2rem;
+    border-radius: 1.5rem;
+    border: .4rem solid;
+    border-color: black;
+    object-fit: cover;
+}
+
+.showImg {
+    height: 25rem;
+    width: 30rem;
+    padding: .2rem;
+    border: .4rem solid;
+    border-radius: 1.5rem;
+    border-color: black;
+    object-fit: cover;
+}
+
+.aboutImg {
+    height: auto;
+    width: 30rem;;
+    padding: .2rem;
+    border: .4rem solid;
+    border-radius: 1.5rem;
+    border-color: black;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 .button, button, .btn {
     border: 2rem;
@@ -85,12 +94,15 @@ h2 {
 
 footer {
     text-align: center;
-    padding: 5rem;
+    padding: 3rem 0 0 0;
 }
 
 @media only screen and (max-width: 520px) {
     .nav-link, .nav-link:hover {
         font-size: smaller;
         padding: .15rem;
+    }
+    .aboutImg {
+        width: 18rem;
     }
 }
