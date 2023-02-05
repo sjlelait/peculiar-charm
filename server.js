@@ -59,7 +59,7 @@ app.use(userRouter);
 app.use(isAuthenticated, collectionRouter);
 app.use(isAuthenticated, pieceRouter);
 // mount routes
-    // is this where it should live?
+
 
 
 
