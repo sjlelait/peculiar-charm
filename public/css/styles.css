@@ -1,5 +1,6 @@
 body {
     background-color: rgb(165, 165, 165);
+    height: 100%;
 }
 
 nav {
@@ -73,4 +74,5 @@ h2 {
 
 footer {
     text-align: center;
+    padding: 5rem;
 }
