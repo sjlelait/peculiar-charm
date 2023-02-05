@@ -11,10 +11,10 @@
             <div class="col">
                 <img class="showImg" src="<%= piece.img %>">
                 <p><%= piece.description %></p>
-                <a class="link" href="<%= piece.link %>" target="_blank"><button>More Info/Buy Here!</button></a><br />
-                <a href="/collections/<%= piece.collectionId %>/<%= piece._id %>/edit"><button>Edit This Piece</button></a>
+                <a class="link" href="<%= piece.link %>" target="_blank"><button class="btn btn-dark">More Info/Buy Here!</button></a><br />
+                <a href="/collections/<%= piece.collectionId %>/<%= piece._id %>/edit"><button class="btn btn-dark">Edit This Piece</button></a><br />
                 <form action="/collections/<%= piece.collectionId %>/<%= piece._id %>?_method=DELETE" method="POST">
-                    <input class="button" type="submit" value="DELETE Piece">
+                    <input class="btn btn-dark btn-sm" type="submit" value="DELETE Piece">
                 </form>
             </div>
         </div>

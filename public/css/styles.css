@@ -72,6 +72,17 @@ h2 {
     padding: .5rem;
 }
 
+.button, button, .btn {
+    border: 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: .1rem .1rem rgb(207, 207, 207);
+    color: rgb(207, 207, 207);
+}
+.button:hover, button:hover, .btn:hover {
+    box-shadow: .1rem .1rem rgb(188, 202, 33);
+}
+
 footer {
     text-align: center;
     padding: 5rem;
