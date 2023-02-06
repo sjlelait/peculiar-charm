@@ -1,6 +1,13 @@
 body {
-    background-color: rgb(165, 165, 165);
+    background-color: rgb(166, 178, 184);
     height: 100%;
+    text-align: center;
+}
+
+.col {
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
 }
 
 nav {
@@ -19,6 +26,7 @@ nav {
 
 .nav-link, .link {
     color:rgb(188, 202, 33);
+    padding: .4rem;
 }
 
 .nav-link:hover, .link:hover {
@@ -34,22 +42,16 @@ h1, h2, .header {
     color: rgb(234, 251, 50); 
 }
 
-h1, h2, p, .col, footer {
-    text-align: center;
-}
-
 h2 {
     color:rgb(209, 223, 52);
     text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 
-.col {
-    justify-content: center;
-    align-items: center;
-    padding: .5rem;
+.homeTxt {
+
 }
 
-.collectionImg, .pieceImg {
+.collectionImg, .pieceImg, .loginImg {
     height: 20rem;
     width: 15rem;
     padding: .2rem;
@@ -69,6 +71,12 @@ h2 {
     object-fit: cover;
 }
 
+.loginImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .aboutImg {
     height: auto;
     width: 30rem;;
@@ -82,8 +90,23 @@ h2 {
     margin-right: auto;
 }
 
+.homeImg {
+    height: auto;
+    width: 30rem;
+    padding: .2rem;
+    border: .4rem solid;
+    border-radius: 1.5rem;
+    border-color: black;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-
+.homeLinks {
+    display: inline;
+    vertical-align: top;
+}
 .button, button, .btn {
     border: 2rem;
     border-radius: 2rem;
@@ -107,4 +130,9 @@ footer {
     .aboutImg {
         width: 18rem;
     }
+}
+
+.form {
+    margin: 0 auto; 
+width:250px;
 }

@@ -5,7 +5,7 @@
 
 <body>
     <%- include("../partials/nav.ejs") %>
-    <div class="container">
+    <div class="container-fluid">
         <h1>Add a New Piece</h1>
         <form action="/collections/<%= collectionId %>/pieces" method="POST" autocomplete="off">
             Name: <input type="text" name="name"><br />

@@ -5,7 +5,7 @@
 
 <body>
     <%- include("../partials/nav.ejs") %>
-    <div class="container">
+    <div class="container-fluid">
         <h1>Edit <%= piece.name %></h1>
         <form action="/collections/<%= piece.collectionId %>/<%= piece._id %>?_method=PUT" method="POST">
             Name: <input type="text" name="name" value="<%= piece.name %>"><br />

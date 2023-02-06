@@ -5,13 +5,15 @@
 
 <body>
     <%- include("../partials/nav.ejs") %>
-    <h1>Create a New and Unusual Collection</h1>
-    <form action="/collections/<%= collection._id %>" method="POST" autocomplete="off">
-        Name: <input type="text" name="name">
-        Description: <input type="text" name="description">
-        Image URL: <input type="text" name="img">
-        <input class="btn btn-dark" type="submit" value="Add New"> 
-    </form>
+    <div class="container-fluid"> 
+        <h1>Create a New and Unusual Collection</h1>
+        <form action="/collections/<%= collection._id %>" method="POST" autocomplete="off">
+            Name: <input type="text" name="name">
+            Description: <input type="text" name="description">
+            Image URL: <input type="text" name="img">
+            <input class="btn btn-dark" type="submit" value="Add New"> 
+        </form>
+    </div>
     <%- include("../partials/footer") %>
 </body>
 </html>

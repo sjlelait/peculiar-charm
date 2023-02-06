@@ -5,17 +5,20 @@
 
 <body>
     <%- include("../partials/nav.ejs") %>
-    <h1>Please Login</h1>
-    <form action="/login" method="POST" autocomplete="off">
-        <label>
-            Email: 
-            <input type="email" name="email" required>
-        </label>
-        <label>
-            Password: 
-            <input type="password" name="password" required>
-        </label>
-        <input class="btn btn-dark" type="submit" value="Login">
-    </form>
+    <div class="container-fluid"> 
+        <h1>Please Login</h1>
+        <img class="loginImg" src="https://images.pexels.com/photos/7978242/pexels-photo-7978242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+        <form action="/login" method="POST" autocomplete="off">
+            <label>
+                Email: 
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                Password: 
+                <input type="password" name="password" required>
+            </label>
+            <input class="btn btn-dark" type="submit" value="Login">
+        </form>
     <%- include("../partials/footer") %>
+    </div>
 </html>
