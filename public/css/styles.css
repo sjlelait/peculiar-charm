@@ -37,6 +37,10 @@ h1, h2, .header, .homeLinks {
     font-weight: bolder;
 }
 
+h1 {
+    padding: 1rem 0 2rem 0;
+}
+
 .navLinks {
     white-space: nowrap;
 }

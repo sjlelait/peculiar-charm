@@ -3,12 +3,7 @@ const router = express.Router();
 const Piece = require("../models/pieces");
 const Collection = require("../models/collections");
 const cloudinary = require("cloudinary").v2;
-  
-// SEED 
 
-// INDEX
-
-// NEW
 router.get("/collections/:collectionId/new", (req, res) => {
     res.render("new-piece.ejs", {
         collectionId: req.params.collectionId,
@@ -16,14 +11,12 @@ router.get("/collections/:collectionId/new", (req, res) => {
     });
 });
 
-// DELETE
 router.delete("/collections/:collectionId/:id", (req, res) => {
     Piece.findByIdAndDelete(req.params.id, (err, data) => {
         res.redirect(`/collections/${req.params.collectionId}`)
     });
 });
 
-// UPDATE
 router.put("/collections/:collectionId/:id", (req, res) => {
     Piece.findByIdAndUpdate((req.params.id), req.body, {
         new: true,
@@ -34,7 +27,6 @@ router.put("/collections/:collectionId/:id", (req, res) => {
     });
 });
 
-// CREATE
 router.post("/collections/:collectionId/pieces", (req, res) => {
     Piece.create(req.body, (err, createdPiece) => {
         Collection.findByIdAndUpdate(req.params.collectionId, { $push: { pieces: createdPiece } }, (err, updatedCollection) => {
@@ -43,7 +35,7 @@ router.post("/collections/:collectionId/pieces", (req, res) => {
     });
 });
 
-// EDIT
+
 router.get("/collections/:collectionId/:id/edit", (req, res) => {
     Piece.findById(req.params.id, (err, foundPiece) => {
         res.render("edit-piece.ejs", {
@@ -52,7 +44,7 @@ router.get("/collections/:collectionId/:id/edit", (req, res) => {
         });
     });
 });
-// SHOW
+
 router.get("/collections/:collectionId/:id/show", (req, res) => {
     Piece.findById(req.params.id, (err, foundPiece) => {
         res.render("show-piece.ejs", {

@@ -3,8 +3,6 @@ const router = express.Router();
 const User = require("../models/users");
 const bcrypt = require("bcrypt");
 
-// signup
-
 router.get("/signup", (req, res) => {
     res.render("signup.ejs", {
         title: "Sign Up"
@@ -20,7 +18,6 @@ router.post("/signup", (req, res) => {
     });
 });
 
-// login users
 router.get("/login", (req, res) => {
     res.render("login.ejs", {
         title: "Login"
@@ -41,14 +38,10 @@ router.post("/login", (req, res) => {
     });
 });
 
-// logout users
 router.get("/logout", (req, res) => {
     req.session.destroy((err) => {
         res.redirect("/login");
     });
 });
-
-
-
 
 module.exports = router;
