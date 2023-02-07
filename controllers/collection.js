@@ -71,13 +71,4 @@ router.get("/collections/:id", (req, res) => {
         });
     }); 
 });
-
-/*
-router.get("/collections/:id", (req, res) => {
-    Collection.findById( {_id: req.params.id} )
-    .populate("pieces")
-    .then(result => res.json(result))
-    .catch(error => res.json(error))
-});
-*/
 module.exports = router;
