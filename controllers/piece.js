@@ -35,7 +35,6 @@ router.post("/collections/:collectionId/pieces", (req, res) => {
     });
 });
 
-
 router.get("/collections/:collectionId/:id/edit", (req, res) => {
     Piece.findById(req.params.id, (err, foundPiece) => {
         res.render("edit-piece.ejs", {
