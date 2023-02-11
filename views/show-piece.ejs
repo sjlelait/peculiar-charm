@@ -13,9 +13,11 @@
                 <p><%= piece.description %></p>
                 <a class="link" href="<%= piece.link %>" target="_blank"><button class="btn btn-dark">More Info/Buy Here!</button></a><br />
                 <a href="/collections/<%= piece.collectionId %>/<%= piece._id %>/edit"><button class="btn btn-dark">Edit This Piece</button></a><br />
+                <% if (user._id != '63deda0169b154aa4776d687') { %>
                 <form action="/collections/<%= piece.collectionId %>/<%= piece._id %>?_method=DELETE" method="POST">
                     <input class="btn btn-dark btn-sm" type="submit" value="DELETE Piece">
                 </form>
+                <% } %>
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@ body {
     padding: .5rem;
 }
 
-nav {
+.nav {
     justify-content: center;
     align-items: center;
     height: 6rem;
