@@ -158,7 +158,7 @@ footer {
         clear: both;
     }
 
-    .aboutImg, .homeImg, .loginImg {
+    .aboutImg, .homeImg, .loginImg, .showImg {
         width: 12rem;
     }
     .homeLinks, .homeTxt {

@@ -15,7 +15,7 @@
                 <a href="/collections/<%= piece.collectionId %>/<%= piece._id %>/edit"><button class="btn btn-dark">Edit This Piece</button></a><br />
                 <% if (user._id != '63deda0169b154aa4776d687') { %>
                 <form action="/collections/<%= piece.collectionId %>/<%= piece._id %>?_method=DELETE" method="POST">
-                    <input class="btn btn-dark btn-sm" type="submit" value="DELETE Piece">
+                    <input class="btn btn-dark btn-sm" type="submit" value="DELETE Piece" onclick="return confirm('Are you sure you want to delete this piece?');">
                 </form>
                 <% } %>
             </div>
